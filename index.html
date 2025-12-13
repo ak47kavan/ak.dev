@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.webp">
+  <title>Aᴋ | Dᴇᴠ</title>
+
+  <!-- Pixel Fonts -->
+  <style>
+    @font-face {
+      font-family: 'PixelMiners';
+      src: url('fonts/Pixel-Miners.otf');
+    }
+    @font-face {
+      font-family: 'PressStart';
+      src: url('fonts/PressStart2P.ttf');
+    }
+    @font-face {
+      font-family: 'DPComic';
+      src: url('fonts/dpcomic.ttf');
+    }
+
+    * {
+      box-sizing: border-box;
+      cursor: url('cursor/cursor-click.png'), auto;
+    }
+
+    a:hover {
+      cursor: url('cursor/cursor.png'), pointer;
+    }
+
+    body {
+      margin: 0;
+      background: #141414;
+      color: #ffffff;
+      font-family: 'PixelMiners', monospace;
+    }
+    .disable {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HERO SECTION */
+   /* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  padding: 24px;
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+    animation: glow 2.5s steps(4) infinite;
+  font-family: 'PixelMiners';
+  font-size: clamp(32px, 8vw, 64px); /* ✅ auto scales */
+  margin: 0;
+}
+@keyframes glow {
+  0% { text-shadow: 0 0 0 #fff; }
+  50% { text-shadow: 0 0 12px #fff; }
+  100% { text-shadow: 0 0 0 #fff; }
+}
+
+.soft {
+  font-family: 'PressStart';
+  font-size: clamp(14px, 4vw, 34px); /* ✅ auto scales */
+  margin-top: 12px;
+}
+
+
+    /* SECTION BASE */
+section {
+
+  opacity: 0;
+  transform: translateY(40px);
+
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #141414;
+  position: relative;
+
+  outline: 3px solid #fff;
+  outline-offset: -3px;
+
+  box-shadow:
+    0 0 0 3px #fff,
+    6px 0 0 0 #fff,
+   -6px 0 0 0 #fff,
+    0 6px 0 0 #fff,
+    0 -6px 0 0 #fff;
+}
+@keyframes powerOn {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+section.visible {
+  animation: slideIn 0.6s steps(6) both;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+    section h2 {
+      font-family: 'PixelMiners';
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-family: 'PixelMiners';
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* TOOLS */
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .tool {
+        outline: 1px solid #fff;
+  outline-offset: -1px;
+
+  box-shadow:
+    0 0 0 1px #fff,
+    2px 0 0 0 #fff,
+   -2px 0 0 0 #fff,
+    0 2px 0 0 #fff,
+    0 -2px 0 0 #fff;
+      padding: 20px;
+      background: #1b1b1b;
+    }
+    .tool:hover {
+  animation: pixelShake 0.25s steps(2);
+}
+
+@keyframes pixelShake {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(2px,0); }
+  50% { transform: translate(-2px,0); }
+  75% { transform: translate(2px,0); }
+  100% { transform: translate(0,0); }
+}
+
+
+    /* SOCIALS */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .socials img {
+      width: 48px;
+      image-rendering: pixelated;
+      transition: transform 0.2s;
+    }
+
+    .socials a:hover img {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 12px;
+    }
+    @media (max-width: 1024px) {
+  section {
+    margin: 40px 24px;
+    padding: 32px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    margin: 32px 16px;
+    padding: 24px;
+  }
+
+  .about p {
+    font-size: 18px;
+  }
+
+  .tools {
+    grid-template-columns: repeat(2, 1fr); /* better fit */
+  }
+
+  .socials {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .socials img {
+    width: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+  /* ================= LOADING SCREEN ================= */
+
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loader-box {
+  border: 4px solid #fff;
+  padding: 32px;
+  text-align: center;
+  width: 260px;
+}
+
+.loader-text {
+  font-family: 'PressStart';
+  font-size: 16px;
+  margin-bottom: 20px;
+  animation: blinkText 1s steps(1) infinite;
+}
+
+@keyframes blinkText {
+  50% { opacity: 0; }
+}
+
+/* Progress bar */
+.progress {
+  height: 16px;
+  border: 3px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: #fff;
+  animation: loadBar 2.5s steps(10) forwards;
+}
+
+@keyframes loadBar {
+  to { width: 100%; }
+}
+
+/* Fade out */
+#loader.hide {
+  animation: fadeOut 0.6s steps(4) forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <div id="loader">
+  <div class="loader-box">
+    <div class="loader-text">LOADING</div>
+    <div class="progress">
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
+<div class="hero">
+
+<h1 id="name" ></h1>
+<div class="soft" id="role"></div>
+
+
+</div>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a Software Developer who loves learning new technologies and building innovative solutions. I operate at the intersection of modern software engineering and advanced intelligence on Airborne ESM systems. My technical focus bridges the gap between crafting seamless mobile applications using Flutter and Firebase, and researching Machine Learning strategies for Electronic Warfare (EW) and Airborne ESM systems. Whether I am architecting scalable cloud solutions or exploring data-driven algorithms for critical EW technologies, I am passionate about engineering software that is both intelligent and impactful.
+    </p>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <h2>Tools & Languages</h2>
+    <div class="tools">
+      <div class="tool">Flutter</div>
+      <div class="tool">GCP</div>
+      <div class="tool">Python</div>
+      <div class="tool">Data Mining</div>
+      <div class="tool">Machine Learning</div>
+    </div>
+  </section>
+  <section>
+    <h2>Projects</h2>
+    <div class="tools">
+        <a href="https://play.google.com/store/apps/details?id=com.webflow.rip_college_app&pli=1" class="disable" target="_blank" >
+      <div class="tool">University App</div></a>
+      <a href="https://github.com/ak47kavan/chatApp" class="disable" target="_blank">
+      <div class="tool">Chat App</div></a>
+      <a href="https://github.com/ak47kavan/health-app" class="disable" target="_blank">
+      <div class="tool">Health App</div></a>
+    </div>
+  </section>
+
+  <!-- SOCIALS -->
+  <section>
+   <h2>Experiences</h2>
+        <div class="tools">
+      <div class="tool">Intern at DRDO</div>
+    </div>
+  </section>
+
+  <footer>
+     <h2>Connect</h2>
+    <div class="socials">
+      <a href="https://github.com/ak47kavan" target="_blank">
+        <img src="images/GitHub.png" alt="GitHub">
+      </a>
+      <a href="mailto:kavankulal2254@gmail.com">
+        <img src="images/Mail.png" alt="Gmail">
+      </a>
+      <a href="https://www.linkedin.com/in/a%E1%B4%8B-%E1%B4%8B%E1%B4%80%E1%B4%A0%E1%B4%80%C9%B4/" target="_blank">
+        <img src="images/LinkedIn.png" alt="LinkedIn">
+      </a>
+      <a href="https://www.instagram.com/dhan_ya_kulal/" target="_blank">
+        <img src="images/Instagram.png" alt="Instagram">
+      </a>
+    </div>&nbsp;&nbsp;<br><br>
+    © 2025&nbsp;&nbsp; AK Dev
+  </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== LOADER ===== */
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 2600); // matches progress animation
+
+  /* ===== TYPING EFFECT ===== */
+  const nameText = "A K Kavan";
+  const roleText = "Software Engineer";
+
+  const nameEl = document.getElementById("name");
+  const roleEl = document.getElementById("role");
+
+  let i = 0;
+  function typeName() {
+    if (i < nameText.length) {
+      nameEl.textContent += nameText[i++];
+      setTimeout(typeName, 120);
+    } else {
+      setTimeout(typeRole, 400);
+    }
+  }
+
+  let j = 0;
+  function typeRole() {
+    if (j < roleText.length) {
+      roleEl.textContent += roleText[j++];
+      setTimeout(typeRole, 80);
+    }
+  }
+
+  setTimeout(typeName, 2800); // start typing AFTER loader
+
+  /* ===== SCROLL REVEAL ===== */
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => observer.observe(sec));
+
+});
+</script>
+
+
+</body>
+</html>
