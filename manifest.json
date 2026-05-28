@@ -1,0 +1,8 @@
+{
+  "name": "AK Kavan Portfolio",
+  "short_name": "AK_KAVAN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040404",
+  "theme_color": "#6aff95"
+}
