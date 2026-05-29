@@ -25,7 +25,7 @@ content="AK Kavan is an experimental software engineer specializing in AI system
   <meta property="og:image" content="images/ironman.jpeg" alt="AK Kavan experimental systems engineer portfolio" />
 
   <link rel="canonical" href="https://ak-dev-34ce1.web.app/" />
-  <link rel="icon" type="image/png" href="images/ironman.jpeg">
+  <link type="image/png" rel="icon" href="images/ironman.jpeg">
   <link rel="manifest" href="/manifest.json">
   <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AK Kavan — Experimental Systems Engineer">
@@ -115,6 +115,16 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       --accent: #6aff95;
       --danger: #ff5c5c;
       --cyan: #65dfff;
+      
+      /* New Starship Assets */
+      --rocket-border: #121614;
+      --steel-dark: #2c3531;
+      --steel-mid: #50625a;
+      --steel-light: #8fa99e;
+      --fire-core: #ffffff;
+      --fire-hot: #3bf1ff;
+      --fire-mid: #ff6c00;
+      --fire-out: #ff2200;
     }
 
     body {
@@ -183,34 +193,15 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       letter-spacing: 1px;
     }
 
-    .boot-line:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    .boot-line:nth-child(2) {
-      animation-delay: 0.8s;
-    }
-
-    .boot-line:nth-child(3) {
-      animation-delay: 1.4s;
-    }
-
-    .boot-line:nth-child(4) {
-      animation-delay: 2s;
-    }
-
-    .boot-line:nth-child(5) {
-      animation-delay: 2.6s;
-    }
-
-    .boot-line:nth-child(6) {
-      animation-delay: 3.2s;
-    }
+    .boot-line:nth-child(1) { animation-delay: 0.2s; }
+    .boot-line:nth-child(2) { animation-delay: 0.8s; }
+    .boot-line:nth-child(3) { animation-delay: 1.4s; }
+    .boot-line:nth-child(4) { animation-delay: 2s; }
+    .boot-line:nth-child(5) { animation-delay: 2.6s; }
+    .boot-line:nth-child(6) { animation-delay: 3.2s; }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .hide-loader {
@@ -242,25 +233,209 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
     }
 
     @keyframes noise {
-      0% {
-        transform: translate(0, 0);
-      }
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(1px, -1px); }
+      50% { transform: translate(-1px, 1px); }
+      75% { transform: translate(1px, 1px); }
+      100% { transform: translate(0, 0); }
+    }
 
-      25% {
-        transform: translate(1px, -1px);
-      }
+    /* ================= PREMIUM STARSHIP SYSTEM V2 ================= */
+    .starship-stage {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      width: 240px;
+      height: 550px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 0 30px rgba(255, 108, 0, 0.15));
+    }
 
-      50% {
-        transform: translate(-1px, 1px);
-      }
+    /* High-Fidelity Pixel Chasis Structure */
+    .starship-chassis {
+      width: 64px;
+      height: 260px;
+      background: 
+        linear-gradient(90deg, 
+          var(--steel-dark) 0%, 
+          var(--steel-mid) 25%, 
+          var(--steel-light) 60%, 
+          var(--steel-mid) 85%, 
+          var(--steel-dark) 100%);
+      position: relative;
+      border: 4px solid var(--rocket-border);
+      border-radius: 32px 32px 4px 4px;
+      box-shadow: inset -6px 0 0 rgba(0,0,0,0.25);
+    }
 
-      75% {
-        transform: translate(1px, 1px);
-      }
+    /* Rocket Nosecone Windows / Sensor Array Block */
+    .starship-chassis::before {
+      content: '';
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 20px;
+      background: var(--cyan);
+      border: 3px solid var(--rocket-border);
+      box-shadow: 0 0 8px var(--cyan);
+    }
 
-      100% {
-        transform: translate(0, 0);
-      }
+    /* Vertical Raceway Pipeline */
+    .starship-chassis::after {
+      content: '';
+      position: absolute;
+      top: 75px;
+      left: 16px;
+      width: 6px;
+      height: 160px;
+      background: var(--steel-dark);
+      border-right: 2px solid var(--steel-light);
+    }
+
+    /* Dynamic Pixel Aero Flaps */
+    .aerodynamic-wings {
+      position: absolute;
+      width: 112px;
+      height: 70px;
+      bottom: 20px;
+      left: -24px;
+      z-index: -1;
+    }
+
+    /* Left Fin and Right Fin Pixel Symmetry mapping */
+    .wing-left, .wing-right {
+      position: absolute;
+      bottom: 0;
+      width: 28px;
+      height: 64px;
+      background: var(--steel-dark);
+      border: 4px solid var(--rocket-border);
+    }
+    .wing-left {
+      left: 0;
+      border-radius: 12px 0 0 32px;
+      box-shadow: inset 4px 0 0 var(--steel-mid);
+    }
+    .wing-right {
+      right: 0;
+      border-radius: 0 12px 32px 0;
+      box-shadow: inset -4px 0 0 var(--steel-light);
+    }
+
+    /* Hyper-Dense 33 Raptor Engine Cluster Array Matrix */
+    .raptor-matrix-33 {
+      width: 56px;
+      height: 18px;
+      background: #141715;
+      border: 4px solid var(--rocket-border);
+      border-top: none;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 1px;
+      padding: 1px;
+      position: relative;
+    }
+
+    .raptor-row {
+      display: flex;
+      justify-content: center;
+      gap: 1px;
+      height: 100%;
+    }
+
+    /* Simulating Outer Ring (20), Inner Ring (10), Center Cluster (3) */
+    .engine-nozzle {
+      flex: 1;
+      background: #0be3ff;
+      height: 100%;
+      box-shadow: 0 0 6px #00aaff;
+      animation: nozzleGlow 0.1s infinite alternate;
+    }
+    .engine-nozzle:nth-child(even) { background: #ffffff; }
+
+    @keyframes nozzleGlow {
+      0% { opacity: 0.8; }
+      100% { opacity: 1; }
+    }
+
+    /* Layered Kinetic Pixel Fire Mechanics */
+    .columnar-flame-system {
+      width: 80px;
+      height: 220px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      filter: blur(0.5px);
+    }
+
+    .plume-layer {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Core Thermal Engine Stream */
+    .plume-core { z-index: 4; width: 44px; }
+    .plume-core .chunk { background: linear-gradient(to bottom, var(--fire-core), var(--fire-hot), transparent); }
+
+    /* Mid Expansion Exhaust plume */
+    .plume-mid { z-index: 3; width: 64px; opacity: 0.9; }
+    .plume-mid .chunk { background: linear-gradient(to bottom, var(--fire-hot), var(--fire-mid), transparent); }
+
+    /* Outer Boundary Dispersal field */
+    .plume-outer { z-index: 2; width: 80px; opacity: 0.6; }
+    .plume-outer .chunk { background: linear-gradient(to bottom, var(--fire-mid), var(--fire-out), transparent); }
+
+    .chunk {
+      width: 8px;
+      height: 100%;
+      transform-origin: top center;
+      animation: engineThrust 0.12s steps(5) infinite;
+    }
+
+    /* Offset cycles for procedural flame fluid sensation */
+    .chunk:nth-child(1) { animation-delay: 0.02s; animation-duration: 0.1s; }
+    .chunk:nth-child(2) { animation-delay: 0.07s; animation-duration: 0.14s; }
+    .chunk:nth-child(3) { animation-delay: 0.04s; animation-duration: 0.11s; }
+    .chunk:nth-child(4) { animation-delay: 0.09s; animation-duration: 0.15s; }
+    .chunk:nth-child(5) { animation-delay: 0.01s; animation-duration: 0.13s; }
+
+    @keyframes engineThrust {
+      0% { transform: scaleY(0.82) scaleX(0.95); filter: contrast(1.2); }
+      50% { transform: scaleY(1.05) scaleX(1.05); }
+      100% { transform: scaleY(0.92) scaleX(0.9); filter: hue-rotate(-10deg); }
+    }
+
+    /* Sparkling Ember Particle Generators */
+    .sparkle-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--fire-mid);
+      animation: particleDrop 0.6s linear infinite;
+    }
+    .spark:nth-child(1) { left: 20%; animation-delay: 0.1s; }
+    .spark:nth-child(2) { left: 45%; animation-delay: 0.3s; width: 6px; }
+    .spark:nth-child(3) { left: 75%; animation-delay: 0s; }
+    .spark:nth-child(4) { left: 60%; animation-delay: 0.4s; }
+
+    @keyframes particleDrop {
+      0% { transform: translateY(220px) scale(1); opacity: 1; }
+      100% { transform: translateY(340px) scale(0); opacity: 0; }
     }
 
     .hero-box {
@@ -358,13 +533,8 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
     }
 
     @keyframes scan {
-      0% {
-        transform: translateX(-100%);
-      }
-
-      100% {
-        transform: translateX(100%);
-      }
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
     .panel-title {
@@ -440,9 +610,7 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
     }
 
     @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+      50% { opacity: 0; }
     }
 
     /* SOCIAL */
@@ -477,35 +645,34 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       letter-spacing: 3px;
     }
 
-    /* MOBILE */
+    /* MOBILE ADJUSTMENTS */
+
+    @media(max-width:1024px) {
+      .starship-stage {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 40px auto 0 auto;
+        transform: scale(0.9);
+      }
+      .hero {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+      }
+    }
 
     @media(max-width:768px) {
-      .main-title {
-        font-size: 52px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .panel-content {
-        font-size: 15px;
-      }
-
-      .status {
-        gap: 10px;
-      }
-
-      .status div {
-        width: 100%;
-      }
+      .main-title { font-size: 52px; }
+      .subtitle { font-size: 16px; }
+      .panel-content { font-size: 15px; }
+      .status { gap: 10px; }
+      .status div { width: 100%; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- LOADER -->
 
   <div id="loader">
 
@@ -522,11 +689,54 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
   </div>
 
-  <!-- HERO -->
-
   <section class="hero">
 
     <div class="noise"></div>
+    
+    <div class="starship-stage">
+      <div class="starship-chassis">
+        <div class="aerodynamic-wings">
+          <div class="wing-left"></div>
+          <div class="wing-right"></div>
+        </div>
+      </div>
+      
+      <div class="raptor-matrix-33">
+        <div class="raptor-row">
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+        </div>
+        <div class="raptor-row">
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+        </div>
+        <div class="raptor-row">
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+          <div class="engine-nozzle"></div><div class="engine-nozzle"></div>
+        </div>
+      </div>
+      
+      <div class="columnar-flame-system">
+        <div class="plume-layer plume-outer">
+          <div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div>
+        </div>
+        <div class="plume-layer plume-mid">
+          <div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div>
+        </div>
+        <div class="plume-layer plume-core">
+          <div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div><div class="chunk"></div>
+        </div>
+        <div class="sparkle-particles">
+          <div class="spark"></div><div class="spark"></div><div class="spark"></div><div class="spark"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="hero-box">
 
@@ -555,11 +765,7 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
   </section>
 
-  <!-- CONTENT -->
-
   <div class="grid">
-
-    <!-- IDENTITY -->
 
     <div class="panel">
 
@@ -576,8 +782,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </div>
 
     </div>
-
-    <!-- TERMINAL -->
 
     <div class="panel">
 
@@ -597,17 +801,13 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- ================= ACTIVE EXPERIMENTS ================= -->
-
-<div class="panel">
+    <div class="panel">
 
   <div class="panel-title">
     active_experiments/
   </div>
 
   <div class="projects">
-
-    <!-- AETHER -->
 
     <div class="project">
 
@@ -623,8 +823,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- RADAR -->
-
     <div class="project">
 
       <small>[ DEFENSE INTELLIGENCE ]</small>
@@ -637,8 +835,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </div>
-
-    <!-- SELF SUPERVISED -->
 
     <div class="project">
 
@@ -653,8 +849,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- FEDERATED -->
-
     <div class="project">
 
       <small>[ DISTRIBUTED INTELLIGENCE ]</small>
@@ -668,8 +862,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </div>
-
-    <!-- UNIVERSITY -->
 
     <a href="https://play.google.com/store/apps/details?id=com.webflow.rip_college_app&pli=1"
       target="_blank" class="project">
@@ -686,8 +878,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </a>
 
-    <!-- CHAT -->
-
     <a href="https://github.com/ak47kavan/chatApp"
       target="_blank" class="project">
 
@@ -701,8 +891,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </a>
-
-    <!-- HEALTH -->
 
     <a href="https://github.com/ak47kavan/health-app"
       target="_blank" class="project">
@@ -718,8 +906,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </a>
 
-    <!-- QT -->
-
     <div class="project">
 
       <small>[ CROSS OS SYSTEMS ]</small>
@@ -733,8 +919,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- OS -->
-
     <div class="project">
 
       <small>[ LOW LEVEL COMPUTING ]</small>
@@ -747,8 +931,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </div>
-
-    <!-- AI -->
 
     <div class="project">
 
@@ -764,8 +946,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- WEB -->
-
     <div class="project">
 
       <small>[ FULL STACK ARCHITECTURE ]</small>
@@ -778,8 +958,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </div>
-
-    <!-- WEIRD -->
 
     <div class="project">
 
@@ -798,8 +976,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
 </div>
 
-<!-- ================= PUBLICATIONS ================= -->
-
 <div class="panel">
 
   <div class="panel-title">
@@ -807,8 +983,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
   </div>
 
   <div class="projects">
-
-    <!-- PAPER 1 -->
 
     <div class="project">
 
@@ -824,8 +998,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- PAPER 2 -->
-
     <div class="project">
 
       <small>[ EWCI 2026 • IISc Bangalore ]</small>
@@ -839,8 +1011,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- PAPER 3 -->
-
     <div class="project">
 
       <small>[ ICASET 2025 ]</small>
@@ -853,8 +1023,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </p>
 
     </div>
-
-    <!-- PAPER 4 -->
 
     <div class="project">
 
@@ -872,8 +1040,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
   </div>
 
 </div>
-
-    <!-- SKILLS -->
 
     <div class="panel">
 
@@ -898,8 +1064,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
 
     </div>
 
-    <!-- EXPERIENCE -->
-
     <div class="panel">
 
       <div class="panel-title">
@@ -918,8 +1082,6 @@ content="AI systems, Flutter engineering, Electronic Warfare research and strang
       </div>
 
     </div>
-
-    <!-- CONTACT -->
 
     <div class="panel">
 
